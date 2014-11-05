@@ -1,0 +1,98 @@
+body {
+	font-family: Proxima Nova, Segoe UI, Roboto, Droid Sans, Helvetica Neue, Arial, sans-serif;
+	text-shadow: rgb(255, 255, 255) 0px 1px 0px;
+}
+
+input {
+	padding:.75em;
+	margin-top:.5em;
+	margin-bottom:.5em;
+	width:100%;
+	border-radius:3px;
+	border-style:solid;
+	border: 1px solid lightgray;
+}
+
+.icon {
+	margin-left:.75em;
+	cursor:pointer;
+}
+
+#hidden_frame{
+	display:none;
+}
+
+#play {
+	display:none;
+}
+
+#microphone, #volume {
+	color:lightgray;
+}
+
+#logo {
+	background-image:url("http://www.homeinvision.com/images/3fb81961602992409ff7fe1b4bace616.jpg");
+	width:100%;
+	height:5em;
+	background-repeat: no-repeat;
+	background-size:100% 100%;
+}
+
+#bar {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	box-shadow: 0 3px 3px 0px  rgba(50, 50, 50, 0.5);
+	padding-left:12.5%;
+	padding-right:12.5%;
+}
+
+#submit {
+	width:100%;
+	text-align:center;
+	background-color:white;
+	border:none;
+	border:1px solid #008CBA;
+	color:#008CBA;
+	transition: color .25s, background-color .25s;
+}
+
+#submit:hover {
+	color:white;
+	background-color:#008CBA;
+}
+
+#login_container {
+	position:absolute;
+	top:30%;
+	left:50%;
+	margin-left:-12.5em;
+	width:25em;	
+}
+
+#window {
+	width:100%;
+	height:90%;
+	border: 1px solid gray;
+	border-radius:3px;
+}
+
+#footer {
+	font-size:1.1em;
+	color:dimgray;
+	margin-top:.75em;
+}
+
+#video_container {
+	height:75%;
+	width:75%;
+	position:absolute;
+	top:10%;
+	left:12.5%;
+	display:none;
+}
+
+#icons {
+	float:right;
+}

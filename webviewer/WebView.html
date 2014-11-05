@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>IPCam WebViewer</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="WebView.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="WebView.css"/>
+	</head>
+	<body>
+		<div id="login_container">
+			<div id="logo"></div>
+			<br/>
+			<input id="address" type="text" placeholder="IP Camera Address">
+			<br/>
+			<!--<input id="username" type="text" placeholder="Username">
+			<br/>
+			<input id="password" type="password" placeholder="Password">
+			</br>-->	
+			<input id="submit" type="submit" value="Connect">
+		</div>
+		<div id="video_container">
+			<iframe id="hidden_frame" name="hidden_frame"></iframe>
+			<form id="direction_control" target="hidden_frame"></form>
+			<image id="window">
+			<div id="footer">
+				<!--<span>Connected to: <span id="url"></span></span>-->
+				<span id="icons">
+					<i id="pause" class="fa fa-pause fa-2x icon"></i>
+					<i id="play" class="fa fa-play fa-2x icon"></i>
+					<i id="microphone" class="fa fa-microphone fa-2x icon"></i>
+					<i id="volume" class="fa fa-volume-up fa-2x icon"></i>
+				</span>
+			</div>
+		</div>
+	</body>
+</html>	
