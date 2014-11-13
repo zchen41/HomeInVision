@@ -10,7 +10,7 @@
 		<div id="login_container">
 			<div id="logo"></div>
 			<br/>
-			<input id="address" type="text" placeholder="IP Camera Address">
+			<input id="address" type="text" placeholder="IP Camera Address (include 'http://' in the address)">
 			<br/>
 			<!--<input id="username" type="text" placeholder="Username">
 			<br/>
@@ -22,11 +22,13 @@
 			<iframe id="hidden_frame" name="hidden_frame"></iframe>
 			<form id="direction_control" target="hidden_frame"></form>
 			<image id="window">
+			<video autoplay id="vid"></video>
 			<div id="footer">
-				<!--<span>Connected to: <span id="url"></span></span>-->
+				<span>Use arrow keys to move camera.</span>
 				<span id="icons">
 					<i id="pause" class="fa fa-pause fa-2x icon"></i>
 					<i id="play" class="fa fa-play fa-2x icon"></i>
+					<i id="camera" class="fa fa-camera fa-2x icon"></i>
 					<i id="microphone" class="fa fa-microphone fa-2x icon"></i>
 					<i id="volume" class="fa fa-volume-up fa-2x icon"></i>
 				</span>

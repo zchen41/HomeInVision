@@ -26,10 +26,12 @@ $(function(){
 	 
 	var login = $("#login_container");
 	var video = $("#video_container");
+	var webcam = $("#vid");
 	var image = $("#window")[0];
 	var control = $("#direction_control")[0];
 	var url; 
 	var img_url;
+	var localMediaStream;
 	 
 	$("#submit").click(function(){
 		url = $("#address").val();
@@ -73,6 +75,13 @@ $(function(){
 		$("#pause").show();
 		image.onload=onLoad;
 		image.src = img_url;
+	});
+	
+	$("#camera").click(function() {
+		console.log("clicked");
+		console.log(webcam[0]);
+		startWebcam();
+		webcam.fadeIn();
 	});
 	
 	$(document).keydown(function(e){
@@ -130,6 +139,47 @@ $(function(){
 	function zoomOut() {
 		control.action = url + "/cgi-bin/hi3510/ptzzoomout.cgi";
 		control.submit();
+	}
+	
+	function errorCallback() {
+		console.log("error");
+		alert("Webcam error!");
+	}
+	
+	function startWebcam() {
+		console.log("called");
+		/*navigator.getUserMedia  = navigator.getUserMedia ||
+                          navigator.webkitGetUserMedia ||
+                          navigator.mozGetUserMedia ||
+                          navigator.msGetUserMedia;*/
+
+		var vid = webcam[0];
+		
+		if (navigator.getUserMedia) {
+			console.log("nav1");
+			navigator.getUserMedia('video', function(stream) {
+				console.log("started1");
+				vid.src = stream;
+				//vid.controls = true;
+				localMediaStream = stream;
+			}, errorCallback);
+		} 
+		else if (navigator.webkitGetUserMedia) {
+			console.log("nav2");
+			navigator.webkitGetUserMedia({video: true, audio:false}, function(stream) {
+				console.log("started2");
+				vid.src = window.URL.createObjectURL(stream);
+				vid.play();
+				//vid.controls = true;
+				localMediaStream = stream;
+			}, function() {
+				console.log("error");
+			});
+		} 
+		else {
+			console.log("not supported");
+			alert("Webcam not supported!");
+		}
 	}
 	
 	/*function adaptiveLoop(callback) {
