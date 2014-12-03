@@ -4,6 +4,16 @@ body {
 	margin:0;
 }
 
+input[type='text']{
+	padding:.75em;
+	margin-top:.5em;
+	margin-bottom:.5em;
+	width:100%;
+	border-radius:3px;
+	border-style:solid;
+	border: 1px solid lightgray;
+}
+
 #divider {
 	background-color:lightgray;
 	height:1px;
@@ -45,22 +55,21 @@ body {
 
 #menu {
 	position:absolute;
-	top:7em;
-	padding-top:.25em;
+	top:7.25em;
 	left:27%;
 	font-weight:100;
 	font-size:1.5em;
 	color:#008CBA;
 	width:8em;
 	border-right:1px solid lightgray;
-	height:20em;
+	height:25em;
 }
 
 #menu_content {
 	position:absolute;
 	top:11.25em;
 	left:40%;
-	width:50em;
+	width:43.5em;
 	color:gray;
 }
 
@@ -75,27 +84,45 @@ body {
 	right:0;
 }
 
+#subtitle {
+	font-weight:100;
+	text-align:center;
+	font-size:2.5em;
+	color:dimgray;
+	display:inline-block;
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+
+
 #status {
-	color:green;
+	color:#2ecc71;
 }
 
 .menu_group {
-	margin-top:.5em;
-	margin-bottom:.75em;
+
+	/*margin-top:.5em;
+	margin-bottom:.75em;*/
+	margin-bottom:.25em;
 }
 
 .menu_title {
+	padding-top:.5em;
+	padding-bottom:.5em;
 	cursor:pointer;
+	padding-left:.25em;
 }
 
 .content_title {
-	font-size:2.5em;
+	font-size:3em;
 	color:gray;
+	font-weight:100;
 }
 
 .content_desc {
 	font-size:2em;
-	color:orange;
+	/*color:orange;*/
 	font-weight:100;
 }
 
@@ -111,7 +138,7 @@ body {
 #browser_select {
 	color:lightgray;
 	margin-top:.25em;
-	font-size:3em;
+	font-size:2.5em;
 	font-weight:100;
 	letter-spacing:1px;
 }
@@ -131,12 +158,99 @@ body {
 
 #remember_container {
 	color:gray;
-	margin-top:1.5em;
+	margin-top:5em;
 	font-size:1.25em;
 	font-weight:100;
 }
 
 .check {
-	background:lightgray;
+	background:lightblue;
 	border-width:1px;
+}
+
+.selected_group > .menu_title {
+	background-color:lightblue;
+}
+
+.content {
+	display:none;
+}
+
+.selected_content {
+	display:block;
+}
+
+.collapsed > .subitems {
+	display:none;
+}
+
+.shown > .subitems {
+	display:block;
+}
+
+
+.subitems {
+	font-size:.75em;
+	margin-top:-.25em;
+}
+
+.subitem {
+	padding:.25em;
+	cursor:pointer;
+}
+
+.browser {
+	color:#008CBA;
+	border:1px solid #008CBA;
+	border-radius:5px;
+	height:7.5em;
+	width:5em;
+	float:left;
+}
+
+#home_desc {
+	color:gray;
+}
+
+/*#ip {
+	color:#008CBA;
+}*/
+
+#power {
+	/*font-size:.5em;
+	float:right;*/
+	font-size:.75em;
+	color:#008CBA;
+	font-weight:100;
+	cursor:pointer;
+}
+
+#recent {
+	font-weight:100;
+	margin-top:2em;
+	/*border:1px solid lightgray;
+	padding:.75em;
+	border-radius:5px;*/
+}
+
+#recent_title {
+	font-size:2em;
+	/*color:#2980b9;
+	cursor:pointer;*/
+}
+
+.recent_item {
+	font-size:1.25em;
+	padding-bottom:.1em;
+}
+
+#view_activity {
+	color:#008CBA;
+	float:right;
+	font-size:.65em;
+	cursor:pointer;
+}
+
+#camera_name {
+	color:dimgray;
 }
