@@ -10,36 +10,48 @@
 		<div id="content">
 			<div id="title_container">
 				<div id="title">HomeInVision</div>
-				<!--<hr id="divider"/>-->
+				<div id="status_container">
+					Camera is <span id="status">Online</span>
+				</div>
+				<hr id="divider"/>
 			</div>
 			<div id="menu">
-				<div class="menu_group" data-target="main">
+				<div class="menu_group" data-target="web_viewer">
 					<div class="menu_title">
-						Home
+						Web Viewer
 					</div>
 				</div>
-				<div class="menu_group" data-target="quick_start">
+				<div class="menu_group collapse" data-target="control_panel">
 					<div class="menu_title">
-						Quick Start
+						Control Panel
 					</div>
 				</div>
 				<div class="menu_group">
-					<div class="menu_title" data-target="advanced">
-						Advanced Settings
+					<div class="menu_title" data-target="about">
+						About
 					</div>				
 				</div>
 			</div>
 			<div id="menu_content">
-				<div id="main">
-					<div id="status_container">
-						Camera is <span id="status">Online</span>
+				<div id="web_viewer">
+					<div class="content_info">
+						<!--<div class="content_title">Web Viewer</div>-->
+						<div class="content_desc">Select your browser type.</div>
 					</div>
+					<div id="browser_select">
+						<span id="b1" class="browser_type">Desktop</span> or						
+						<span id="b2" class="browser_type">Mobile</span>
+					</div>
+					<!--<div id="remember_container">
+						<input type="checkbox" class="check" value="None" id="remember" name="remember" />
+					<label id="remember_label" for="remember">Remember My Choice</label>
+					</div>-->
 				</div>
-				<div id="quick_start">
+				<div id="control_panel">
 					<div>
 					</div>
 				</div>
-				<div id="advanced">
+				<div id="about">
 				</div>
 			</div>
 		</div>

@@ -31,7 +31,7 @@ $(function(){
 	var control = $("#direction_control")[0];
 	var url; 
 	var img_url;
-	var localMediaStream;
+	var localMediaStream = null;
 	 
 	$("#submit").click(function(){
 		url = $("#address").val();
@@ -78,10 +78,16 @@ $(function(){
 	});
 	
 	$("#camera").click(function() {
-		console.log("clicked");
-		console.log(webcam[0]);
-		startWebcam();
-		webcam.fadeIn();
+		if(!localMediaStream) {
+			startWebcam();
+			webcam.fadeIn();
+		}
+		else {
+			webcam[0].pause();
+			localMediaStream.stop();
+			localMediaStream = null;
+			webcam.hide();
+		}
 	});
 	
 	$(document).keydown(function(e){
@@ -142,42 +148,30 @@ $(function(){
 	}
 	
 	function errorCallback() {
-		console.log("error");
 		alert("Webcam error!");
 	}
 	
 	function startWebcam() {
-		console.log("called");
-		/*navigator.getUserMedia  = navigator.getUserMedia ||
+		navigator.getUserMedia  = navigator.getUserMedia ||
                           navigator.webkitGetUserMedia ||
                           navigator.mozGetUserMedia ||
-                          navigator.msGetUserMedia;*/
+                          navigator.msGetUserMedia;
 
 		var vid = webcam[0];
 		
 		if (navigator.getUserMedia) {
-			console.log("nav1");
-			navigator.getUserMedia('video', function(stream) {
-				console.log("started1");
-				vid.src = stream;
-				//vid.controls = true;
-				localMediaStream = stream;
-			}, errorCallback);
-		} 
-		else if (navigator.webkitGetUserMedia) {
-			console.log("nav2");
-			navigator.webkitGetUserMedia({video: true, audio:false}, function(stream) {
-				console.log("started2");
+			navigator.getUserMedia({video: true, audio:true}, function(stream) {
+				console.log("started");
 				vid.src = window.URL.createObjectURL(stream);
-				vid.play();
 				//vid.controls = true;
 				localMediaStream = stream;
-			}, function() {
+				vid.play();
+			}, function(err) {
 				console.log("error");
+				console.log(err);
 			});
 		} 
 		else {
-			console.log("not supported");
 			alert("Webcam not supported!");
 		}
 	}

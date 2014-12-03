@@ -5,25 +5,30 @@ body {
 }
 
 #divider {
-	background-color:dimgray;
+	background-color:lightgray;
 	height:1px;
 	border:none;
+	position:absolute;
+	width:100%;
+	bottom:-2.1em;
 }
 
 #title {
 	color:gray;
-	width:100%;
+	font-size:4em;
+	display:inline-block;
+	position:absolute;
+	bottom:-.1em;
+	left:0;
 }
 
 #title_container {
 	position:absolute;
 	top:.75em;
-	left:22%;
-	width:42em;
+	left:27%;
 	height:7em;
-	font-size:4em;
 	font-weight:100;
-	width:60%;
+	width:50%;
 	/*background-repeat: no-repeat;
 	background-size:100% 100%;
 	background-image:url("http://www.homeinvision.com/images/3fb81961602992409ff7fe1b4bace616.jpg");*/
@@ -33,34 +38,41 @@ body {
 	margin:auto;
 	margin-top:0;
 	margin-bottom:0;
-	width:60%;
+	width:50%;
 	height:100%;
 	background-color:white;
 }
 
 #menu {
 	position:absolute;
-	top:7.25em;
-	left:22%;
+	top:7em;
+	padding-top:.25em;
+	left:27%;
 	font-weight:100;
 	font-size:1.5em;
 	color:#008CBA;
-	width:10em;
+	width:8em;
+	border-right:1px solid lightgray;
+	height:20em;
 }
 
 #menu_content {
 	position:absolute;
 	top:11.25em;
-	left:33%;
+	left:40%;
 	width:50em;
 	color:gray;
 }
 
 #status_container {
-	font-size:2.5em;
 	font-weight:100;
-	width:100%;
 	text-align:center;
+	font-size:2.5em;
+	color:dimgray;
+	display:inline-block;
+	position:absolute;
+	bottom:0;
+	right:0;
 }
 
 #status {
@@ -69,11 +81,22 @@ body {
 
 .menu_group {
 	margin-top:.5em;
-	margin-bottom:.5em;
+	margin-bottom:.75em;
 }
 
 .menu_title {
 	cursor:pointer;
+}
+
+.content_title {
+	font-size:2.5em;
+	color:gray;
+}
+
+.content_desc {
+	font-size:2em;
+	color:orange;
+	font-weight:100;
 }
 
 #logo {
@@ -82,4 +105,38 @@ body {
 	height:5em;
 	background-repeat: no-repeat;
 	background-size:100% 100%;
+}
+
+
+#browser_select {
+	color:lightgray;
+	margin-top:.5em;
+	font-size:3em;
+	font-weight:100;
+	letter-spacing:1px;
+}
+
+#b1 {
+	margin-right:.1em;
+}
+
+#b2 {
+	margin-left:.2em;
+}
+
+.browser_type{
+	color:#3498db;
+	cursor:pointer;
+}
+
+#remember_container {
+	color:gray;
+	margin-top:1.5em;
+	font-size:1.25em;
+	font-weight:100;
+}
+
+.check {
+	background:lightgray;
+	border-width:1px;
 }
